@@ -1,0 +1,15 @@
+.item{
+  border-bottom: 1px solid black;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+col-md-3{
+  padding:10px;
+}
+ img{
+   -webkit-transform: rotate(2700deg);
+   -moz-transform: rotate(270deg);
+   -o-transform: rotate(270deg);
+   -ms-transform: rotate(270deg);
+   transform: rotate(270deg);
+ }

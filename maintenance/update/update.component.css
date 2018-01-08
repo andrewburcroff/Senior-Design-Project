@@ -1,0 +1,56 @@
+img{
+  height: 55%;
+  width: 45%;
+}
+
+.container{
+  height: 5vh;
+}
+
+/*.col-md-2 {*/
+/*width: 14%;*/
+/*}*/
+
+.btn-menu{
+  margin-top: 2px;
+  height: 125px;
+  width: 1500px;
+  font-size:small;
+  margin-left: -60px;
+}
+
+.offset-header{
+  left: 4%;
+}
+
+.offset-txt{
+  left: 38%;
+}
+
+.offset-img{
+  left: 25%;
+}
+
+button{
+  color: black;
+  font-size: x-large;
+  height: 140px;
+  width: 5000px;
+  margin-top: 20px;
+}
+
+.btn-block{
+  width: 100%;
+}
+
+.btn-info{
+  background-color: #4d90fe;
+}
+
+.btn-danger{
+  background-color: orangered !important;
+}
+
+.btn-primary{
+  background-color: green !important;
+}

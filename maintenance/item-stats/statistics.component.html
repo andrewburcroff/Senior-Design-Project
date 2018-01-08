@@ -1,0 +1,162 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 style="text-align: center; border-bottom: 1px solid lightgreen">{{currentItem.name}}'s Statistical Informational Page</h1>
+    </div>
+  </div>
+
+  <div class="row" style="padding-right:35px;padding-left: 35px">
+    <div class="col-md-9" style="border: 1px outset;" >
+      <div class="row " style="margin-left:8px;">
+        <div class="col-md-3">
+          <div class="row">
+            <h2 style="color:purple"><strong>Name</strong></h2>
+          </div>
+          <div class="row">
+            <h2 class="item">{{currentItem.name}}</h2>
+          </div>
+        </div>
+
+        <div class="col-md-3" style="margin-left:20px;">
+          <div class="row">
+            <h2 style="color:purple"><strong>Count</strong></h2>
+          </div>
+          <div class="row">
+            <h2 class="item">{{currentItem.count}}</h2>
+          </div>
+        </div>
+
+        <div class="col-md-3" style="margin-left:20px;">
+          <div class="row">
+            <h2 style="color:purple"><strong>Price</strong></h2>
+          </div>
+          <div class="row">
+            <h2 class="item">{{currentItem.price | currency}}</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 60px">
+        <div class="col-md-2" style="margin-left:20px;">
+          <div class="row">
+            <h2 style="color:purple"><strong>Made By</strong></h2>
+          </div>
+          <div class="row">
+            <h2 class="item">{{currentItem.maker}}</h2>
+          </div>
+        </div>
+
+        <div class="col-md-2" style="margin-left:20px;">
+          <div class="row">
+            <h2 style="color:purple"><strong>Catergory</strong></h2>
+          </div>
+          <div class="row">
+            <h2 class="item">{{currentItem.catergory}}</h2>
+          </div>
+        </div>
+
+        <div class="col-md-2" style="margin-left:20px;">
+          <div class="row">
+            <h2 style="color:purple"><strong>Refill Type</strong></h2>
+          </div>
+          <div class="row">
+            <h2 class="item">Weekly</h2>
+          </div>
+        </div>
+
+        <!--<div class="col-md-2" style="margin-left:20px;">-->
+          <!--<div class="row">-->
+            <!--<h2 style="color:purple"><strong>Date Added</strong></h2>-->
+          <!--</div>-->
+          <!--<div class="row">-->
+            <!--<h2 class="item">{{currentItem.dateAdded}}</h2>-->
+          <!--</div>-->
+        <!--</div>-->
+
+      </div>
+
+      <div class="row" style="margin-top: 60px">
+        <div class="col-md-2" style="margin-left:20px;">
+          <div class="row">
+            <h2 style="color:purple"><strong>Total Sold</strong></h2>
+          </div>
+          <div class="row">
+            <h2 class="item">{{currentItem.maker}}</h2>
+          </div>
+        </div>
+
+        <div class="col-md-2" style="margin-left:20px;">
+          <div class="row">
+            <h2 style="color:purple"><strong>Strongest Day</strong></h2>
+          </div>
+          <div class="row">
+            <h2 class="item">{{currentItem.catergory}}</h2>
+          </div>
+        </div>
+
+        <div class="col-md-" style="margin-left:20px;">
+          <div class="row">
+            <h2 style="color:purple"><strong>Weakest Day</strong></h2>
+          </div>
+          <div class="row">
+            <h2 class="item">Weekly</h2>
+          </div>
+        </div>
+
+        <!--<div class="col-md-2" style="margin-left:20px;">-->
+          <!--<div class="row">-->
+            <!--<h2 style="color:purple"><strong>Date Added</strong></h2>-->
+          <!--</div>-->
+          <!--<div class="row">-->
+            <!--<h2 class="item">{{currentItem.dateAdded}}</h2>-->
+          <!--</div>-->
+        <!--</div>-->
+      </div>
+
+      <!--<div class="row" style="margin-top: 60px">-->
+        <!--<div class="col-md-2" style="margin-left:20px;">-->
+          <!--<div class="row">-->
+            <!--<h2 style="color:purple"><strong>Catergory</strong></h2>-->
+          <!--</div>-->
+          <!--<div class="row">-->
+            <!--<h2 class="item">{{currentItem.catergory}}</h2>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <button class="btn" style="padding-bottom:5px; height: 80px; width: 200px; margin-top: 50px ;margin-left: -15px" (click)="backButton()">Back</button>
+
+    </div>
+
+    <div class="col-md-3" style="border: 3px outset;">
+      <div class="row">
+        <div class="col-md-3" style="margin-left:20px;width:90%">
+          <div class="row">
+            <h2 style="color:purple"><strong>Location</strong></h2>
+          </div>
+          <div class="row">
+            <h2 class="item">Row: {{location.row}} x Col: {{location.col}}</h2>
+          </div>
+        </div>
+      </div>
+
+        <div class="row" style="margin-top: 100px">
+          <div class="col-md-3" style="margin-left:-160px;margin-top:150px;">
+            <div class="row">
+              <!--{{currentItem.name}} Picture Goes Here-->
+              <img style="max-height:225px;margin-left: 60px" src="{{currentItem.picture}}">
+            </div>
+          </div>
+        </div>
+
+      <div class="row">
+        <div class="col-md-3" style="margin-left:50px;margin-top:150px;">
+          <div class="row">
+            <!--{{currentItem.name}} Picture Info Goes Here-->
+            <!--<img src="{{currentItem.picture}}">-->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

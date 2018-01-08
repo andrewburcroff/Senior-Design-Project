@@ -1,0 +1,23 @@
+
+<!--<frame style="height: 10vh">-->
+<div style="height: 30vh" (scroll)="false" *ngIf="accessKey">
+  <app-web style="height: 33%"></app-web>
+ <app-vending style="height: 10vh"></app-vending>
+  <ads style="height: 34%; max-width: 2vw; margin-top: 120px"></ads>
+</div>
+
+<div class="col-md-12" *ngIf="!accessKey" (scroll)="false">
+  <div class="row" style="background-color: midnightblue; color: midnightblue; height: 50px "></div>
+  <div class="row" style="margin-top: 100px">
+    <div class="col-md-offset-4 col-md-5">
+      <p>This device is not registered please navigate to the registry page to register your device.</p>
+    </div>
+  </div>
+
+  <div class="row" (scroll)="false">
+    <div class="col-md-offset-4 col-md-5">
+      <button class="btn btn-success" (click)="navToRegister()">Register Device</button>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,246 @@
+  <div class="container" style="height: 100%; width: 100%; margin-top: 0px;background-color: white">
+    <div class="products" style="margin-top: -12px">
+      <div class="row-md" style="margin-left: 0px; background-color: lightblue">
+        <div class="col-md-4">
+          <div *ngFor="let product of products1"
+               [class.selected]="product === selectedProduct">
+            <button (click)="onSelect(product)" (click)="printhey(product)" (click)="modal1.showMenu(selectedProduct, modal1, modal5)" class="img-thumbnail" >
+              <img class="vend-item" src="{{product.picture}}">
+            </button>
+            <!--<p>{{product.price}}</p>-->
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div *ngFor="let product of products2"
+               [class.selected]="product === selectedProduct">
+            <button (click)="onSelect(product)" (click)="printhey(product)" (click)="modal1.showMenu(selectedProduct, modal1, modal5)" class="img-thumbnail" >
+              <img class="vend-item" src="{{product.picture}}">
+              <!--<p>{{product.price}}</p>-->
+            </button>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div *ngFor="let product of products3"
+             [class.selected]="product === selectedProduct">
+          <button (click)="onSelect(product)" (click)="printhey(product)" (click)="modal1.showMenu(selectedProduct, modal1, modal5)" class="img-thumbnail">
+            <img class="vend-item" src="{{product.picture}}">
+            <!--<p>{{product.price}}</p>-->
+          </button>
+        </div>
+      </div>
+      <!--<div class="col-md-3">-->
+        <!--<div *ngFor="let product of products4"-->
+             <!--[class.selected]="product === selectedProduct">-->
+          <!--<button (click)="onSelect(product)" (click)="printhey(product)" (click)="modal1.showMenu(selectedProduct, modal1, modal5)" class="img-thumbnail" style="width: 100%">-->
+            <!--<img src="{{product.picture}}">-->
+          <!--</button>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-md-2">-->
+        <!--<div *ngFor="let product of products5"-->
+             <!--[class.selected]="product === selectedProduct">-->
+          <!--<button (click)="onSelect(product)" (click)="printhey(product)" (click)="modal1.showMenu(selectedProduct, modal1, modal5)"  class="img-thumbnail" style="width: 100%"><img src="{{product.picture}}"></button>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="col-md-2">-->
+        <!--<div *ngFor="let product of products6"-->
+             <!--[class.selected]="product === selectedProduct">-->
+          <!--<button (click)="onSelect(product)" (click)="printhey(product)" (click)="modal1.showMenu(selectedProduct, modal1, modal5)"  class="img-thumbnail" style="width: 100%"><img src="{{product.picture}}"></button>-->
+        <!--</div>-->
+      <!--</div>-->
+    </div>
+  </div>
+</div>
+
+  <!--**************************************************-->
+  <!--Item menu - appears when an item is selected-->
+  <!--**************************************************-->
+
+  <app-modal id="modal" #modal1 style="margin-top: -100px">
+    <div class="app-modal-header">
+      <div class="row">
+        <div class="row-md-2 offset-header">
+          <h2 style="text-align: center">{{selectedProduct.name}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="app-modal-body">
+      <div class="row">
+        <div class="row-md-2 align-content-center"><img style="margin-left: 100px" src={{selectedProduct.picture}}>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-md-2 offset-txt">
+          <h2 style="text-align: center">Price: ${{selectedProduct.price}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="app-modal-footer">
+      <div class="row">
+        <div class="col-md-12 card" >
+          <button type="button" class="btn btn-info btn-block"
+                  (click)="modal1.hide()" (click)="modal2.show()"
+                  (click)="modal2.longAutoHide()" >Info</button>
+
+          <button type="button" class="btn btn-danger btn-block"
+                  (click)="modal1.hide()">Cancel</button>
+
+          <button type="button" class="btn btn-primary btn-block"
+                  (click)="modal1.hide()"
+                  (click)="modal3.show()"
+                  (click)="modal3.longAutoHide()">Buy</button>
+        </div>
+      </div>
+    </div>
+  </app-modal>
+
+  <!--**************************************************-->
+  <!--Info Menu-->
+  <!--**************************************************-->
+
+  <app-modal #modal2 style="margin-top: 20px">
+    <div class="app-modal-header">
+      <div class="row">
+        <div class="row-md-2 offset-header">
+          <h2 style="text-align: center">{{selectedProduct.name}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="app-modal-body">
+      <div class="row">
+        <div class="row-md-2 align-content-center"><img src={{selectedProduct.info}}>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-md-2 offset-txt">
+          <h2 style="text-align: center">Price: ${{selectedProduct.price}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="app-modal-footer">
+      <div class="row">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-danger btn-block"
+                  (click)="modal2.hide()">Cancel</button>
+          <button type="button" class="btn btn-primary btn-block"
+                  (click)="modal2.hide()"
+                  (click)="modal3.show()"
+                  (click)="modal3.longAutoHide()">Buy</button>
+
+        </div>
+      </div>
+    </div>
+  </app-modal>
+
+  <!--**************************************************-->
+  <!--Buy menu-->
+  <!--**************************************************-->
+
+  <app-modal #modal3 style="margin-top: 20px">
+    <div class="app-modal-header">
+      <div class="row">
+        <div class="row-md-2 offset-header">
+          <h2 style="text-align: center">{{selectedProduct.name}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="app-modal-body">
+      <div class="row">
+        <div class="row-md-2 align-content-center"><img src={{selectedProduct.picture}}>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-md-2 offset-txt">
+          <h2 style="text-align: center">Price: ${{selectedProduct.price}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="app-modal-footer">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 style="text-align: center">Please choose your payment method.</h2>
+          <button type="button" class="btn btn-primary btn-block" style="background-color: green"
+                  (click)="modal3.hide()"
+                  (click)="modal4.updateCount(selectedProduct, modal4)" (click)="buy()">Cash</button> <!--Add functionality to use cash here-->
+          <button type="button" class="btn btn-block" style="background-color: lightblue"
+                  (click)="modal3.hide()"
+                  (click)="modal4.updateCount(selectedProduct, modal4)" (click)="buy()">Credit Card</button> <!--Add functionality to use credit cards here-->
+          <button type="button" class="btn btn-danger btn-block" (click)="modal3.hide()">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </app-modal>
+
+  <!--**************************************************-->
+  <!--Vend in progress message-->
+  <!--**************************************************-->
+
+  <app-modal #modal4 style="margin-top: 20px">
+    <div class="app-modal-header">
+      <div class="row">
+        <div class="row-md-2 offset-header">
+          <h2 style="text-align: center">Now vending: {{selectedProduct.name}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="app-modal-body">
+      <div class="row">
+        <div class="row-md-2 align-content-center"><img src={{selectedProduct.picture}}>
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-md-2 offset-txt">
+          <h2 style="text-align: center">Price: ${{selectedProduct.price}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="app-modal-footer">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 style="text-align: center">Now Vending</h2>
+        </div>
+      </div>
+    </div>
+  </app-modal>
+
+  <!--**************************************************-->
+  <!--Out of Stock menu - appears when an item is selected and is out of stock-->
+  <!--**************************************************-->
+
+  <app-modal #modal5 style="margin-top: 20px">
+    <div class="app-modal-header">
+      <div class="row">
+        <div class="row-md-2 offset-header">
+          <h2 style="text-align: center">{{selectedProduct.name}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="app-modal-body">
+      <div class="row">
+        <div class="row-md-2 align-content-center">
+          <!--<img src={{selectedProduct.picture}}>-->
+        </div>
+      </div>
+      <div class="row">
+        <div class="row-md-2 offset-txt">
+          <h2 style="text-align: center">Price: ${{selectedProduct.price}}</h2>
+        </div>
+      </div>
+    </div>
+    <div class="app-modal-footer" *ngIf="!countFlag">
+      <div class="row">
+        <div class="col-md-12">
+          <button type="button" class="btn btn-info btn-block"
+                  (click)="modal5.hide()" (click)="modal2.show()"
+                  (click)="modal2.longAutoHide()" >Info</button>
+          <button type="button" class="btn btn-danger btn-block"
+                  (click)="modal5.hide()">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <div class="app-modal-footer" *ngIf="countFlag">
+      <div class="alert alert-danger">
+        <strong>Out of Stock</strong>
+      </div>
+    </div>
+  </app-modal>

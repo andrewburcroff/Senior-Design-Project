@@ -1,0 +1,38 @@
+<div class="container-fluid" style="background-color: lightcyan; height: 975px">
+  <div class="row" style="background-color: midnightblue; color: midnightblue; height: 50px">F</div>
+  <div class="row" style="margin-top: 10px">
+  <div class="col-md-offset-5 col-5">
+    <h1>Maintenance Login</h1>
+  </div>
+  </div>
+
+  <div class="row" style="margin-top: 25px">
+    <div class="col-md-offset-5" >
+      <form #login="ngForm" (ngSubmit)="onSubmit(login)" novalidate style="margin-left: 30px;">
+        <div class="row">
+          <div class="row" *ngIf="wrongFlag" style="margin-left: -30px">
+            <div class="col-md-3">
+              <h1 style="background-color: red">Error on login. Try again.</h1>
+            </div>
+          </div>
+          <div class="row" style="font-size: 26px">Username</div>
+          <div class="row"><input md-input name="first" ngModel required #first="ngModel" style="height: 50px; width: 305px; font-size: 28px"></div>
+        </div>
+        <div class="row">
+          <div class="row" style="font-size: 26px">Password</div>
+          <div class="row"><input type="password" name="password" ngModel style="height: 50px; width: 305px; font-size: 28px"></div>
+        </div>
+        <div class="row" style="margin-top: 12px; margin-left: -45px">
+          <div class="col-md-2">
+            <button class="btn btn-block btn-info" (click)=" back()">Back</button>
+          </div>
+          <div class="col-md-2">
+            <button class="btn btn-block btn-info" type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+</div>

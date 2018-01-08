@@ -1,0 +1,468 @@
+<div class="col-md-12" style="height: 100%; width: 100%;">
+  <div class="row" style="background-color: midnightblue; color: midnightblue;height: 50px">F</div>
+  <div class="row">
+   <div class="col-md-offset-4">
+     <h1 style="margin-top: 30px">Kiosk Update Page</h1>
+   </div>
+ </div>
+  <div class="row" style="padding:10px; border-bottom: 2px solid grey">
+    <div class="col-md-offset-1 col-md-3">
+      <button style="height: 50px; width: 100%" class="btn btn-warning" (click)="backToVending()">Vending</button>
+    </div>
+    <!--<div class="col-md-3">-->
+      <!--<button style="height: 50px; width: 100%" class="btn btn-success">Login</button>-->
+    <!--</div>-->
+    <div class="col-md-3">
+      <button style="height: 50px; width: 100%" class="btn btn-info">Device Info</button>
+    </div>
+    <div class="col-md-3">
+      <button style="height: 50px; width: 100%" class="btn btn-danger" (click)="navToRegistery()">Register Device</button>
+    </div>
+  </div>
+  <div class="products">
+    <div class="row-md" style="margin-left: 0px; background-color: lightblue">
+      <div class="col-md-4" >
+        <div *ngFor="let product of products1"
+             [class.selected]="product === selectedProduct" (click)="onSelect(product)" style="border: 1px solid lightgray;padding: 5px; margin-top: 5px">
+          <button (click)="printhey(product)"
+                  (click)="modal1.showMenu(selectedProduct, modal1, modal5)" class="img-thumbnail" style="width: 100%">
+            <img  class="vend-item" src="{{product.picture}}">
+          </button>
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu" (click)="updateStock.show()">Restock</button>-->
+          <!--</div>-->
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu" (click)="changePrice.show()">Change Price</button>-->
+          <!--</div>-->
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu" (click)="onSelect(product)" (click)=" navToStats(product.id)">Check Statistics</button>-->
+          <!--</div>-->
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu">Change Image</button>-->
+          <!--</div>-->
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu" (click)="navToExchange(product.id)">Exchange Product</button>-->
+          <!--</div>-->
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div *ngFor="let product of products2"
+             [class.selected]="product === selectedProduct" (click)="onSelect(product)" style="border: 1px solid lightgray;padding: 5px; margin-top: 5px">
+          <button (click)="printhey(product)"
+                  (click)="modal1.showMenu(selectedProduct, modal1, modal5)" class="img-thumbnail" style="width: 100%">
+            <img class="vend-item" src="{{product.picture}}">
+          </button>
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu" (click)="updateStock.show()">Restock</button>-->
+          <!--</div>-->
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu" (click)="changePrice.show()">Change Price</button>-->
+          <!--</div>-->
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu" (click)="onSelect(product)" (click)=" navToStats(product.id)">Check Statistics</button>-->
+          <!--</div>-->
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu">Change Image</button>-->
+          <!--</div>-->
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu" (click)="navToExchange(product.id)">Exchange Product</button>-->
+          <!--</div>-->
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div *ngFor="let product of products3"
+             [class.selected]="product === selectedProduct" (click)="onSelect(product)" style="border: 1px solid lightgray;padding: 5px; margin-top: 5px">
+          <button (click)="printhey(product)"
+                  (click)="modal1.showMenu(selectedProduct, modal1, modal5)" class="img-thumbnail" style="width: 100%">
+            <img  class="vend-item" src="{{product.picture}}">
+          </button>
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu" (click)="updateStock.show()" >Restock</button>-->
+          <!--</div>-->
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu" (click)="onSelect(product)" (click)="changePrice.show()">Change Price</button>-->
+          <!--</div>-->
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu" (click)="onSelect(product)" (click)=" navToStats(product.id)">Check Statistics</button>-->
+          <!--</div>-->
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu">Change Image</button>-->
+          <!--</div>-->
+          <!--<div class="row col-md-offset-5">-->
+            <!--<button class="btn-menu" (click)="navToExchange(product.id)">Exchange Product</button>-->
+          <!--</div>-->
+        </div>
+      </div>
+      <!--<div class="col-md-3">-->
+        <!--<div *ngFor="let product of products4"-->
+             <!--[class.selected]="product === selectedProduct" (click)="onSelect(product)" style="border: 1px solid lightgray;padding: 5px; margin-top: 5px">-->
+          <!--<button  (click)="printhey(product)"-->
+                  <!--(click)="modal1.showMenu(selectedProduct, modal1, modal5)" class="img-thumbnail"style="width: 100%">-->
+            <!--<img src="{{product.picture}}">-->
+          <!--</button>-->
+          <!--&lt;!&ndash;<div class="row col-md-offset-5">&ndash;&gt;-->
+            <!--&lt;!&ndash;<button class="btn-menu" (click)="updateStock.show()">Restock</button>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="row col-md-offset-5">&ndash;&gt;-->
+            <!--&lt;!&ndash;<button class="btn-menu" (click)="changePrice.show()">Change Price</button>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="row col-md-offset-5">&ndash;&gt;-->
+            <!--&lt;!&ndash;<button class="btn-menu" (click)="onSelect(product)" (click)=" navToStats(product.id)">Check Statistics</button>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="row col-md-offset-5">&ndash;&gt;-->
+            <!--&lt;!&ndash;<button class="btn-menu">Change Image</button>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+          <!--&lt;!&ndash;<div class="row col-md-offset-5">&ndash;&gt;-->
+            <!--&lt;!&ndash;<button class="btn-menu" (click)="navToExchange(product.id)">Exchange Product</button>&ndash;&gt;-->
+          <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</div>-->
+      <!--</div>-->
+    </div>
+  </div>
+</div>
+
+<!--**************************************************-->
+<!--Item menu - appears when an item is selected-->
+<!--**************************************************-->
+
+
+<!--
+This will be the modal that the maintenance guy options come from such as exchange product, update stock, change image, change price, check stats
+-->
+<app-modal id="modal" #modal1 style="margin-top: -10000px">
+  <div class="app-modal-header">
+    <div class="row">
+      <div class="row-md-2 offset-header">
+        <h2 style="text-align: center">{{selectedProduct.name}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="app-modal-body">
+    <div class="row">
+      <div class="row-md-2 align-content-center"><img style="margin-left: 150px" src={{selectedProduct.picture}}>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-md-2 offset-txt">
+        <h2 style="text-align: center">Price: ${{selectedProduct.price}}</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-md-2 offset-txt">
+        <h2 style="text-align: center">Remaining Inventory: {{selectedProduct.count}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="app-modal-footer">
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-info btn-block" (click)="updateStock.show()">Update Stock</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-info btn-block" (click)="changePrice.show()">Change Price</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-info btn-block" (click)=" navToStats(selectedProduct.id)">Check Statistics</button>
+      </div>
+    </div>
+    <!--<div class="row">-->
+      <!--<div class="col-md-12">-->
+        <!--<button class="btn btn-info btn-block">Change Image</button>-->
+      <!--</div>-->
+    <!--</div>-->
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-info btn-block" (click)="navToExchange(selectedProduct.id)" >Exchange Product</button>
+      </div>
+    </div>
+
+    <!--<div class="row">-->
+    <!--<div class="col-md-12">-->
+    <!--<button type="button" class="btn btn-info btn-block">Update Stock</button>-->
+
+    <!--<button type="button" class="btn btn-danger btn-block"-->
+    <!--(click)="modal1.hide()">Cancel</button>-->
+
+    <!--<button type="button" class="btn btn-primary btn-block"-->
+    <!--(click)="modal1.hide()"-->
+    <!--(click)="modal3.show()"-->
+    <!--(click)="modal3.longAutoHide()">Buy</button>-->
+    <!--</div>-->
+    <!--</div>-->
+  </div>
+</app-modal>
+
+<!--
+
+      --------------------------------- THIS SECTION CODE IS USED FOR THE RESTOCK FEATURE ---------------------------------------
+
+-->
+
+
+<app-modal #updateStock style="margin-top: 20px">
+  <div class="app-modal-header">
+    <div class="row">
+      <div class="row-md-2 offset-header">
+        <h2 style="text-align: center">{{selectedProduct.name}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="app-modal-body">
+    <div class="row">
+      <div class="row-md-2 offset-txt">
+        <h2 style="text-align: center">Price: ${{selectedProduct.price}}</h2>
+      </div>
+      <div class="row-md-2 offset-txt">
+        <h2 style="text-align: center">Count: {{selectedProduct.count}}</h2>
+      </div>
+      <div class="row-md-2 offset-txt">
+        <h2 style="text-align: center; margin-left: -26px">Requested Restock Quantity: </h2>
+      </div>
+    </div>
+    <form #stock="ngForm" (ngSubmit)="setRestock(stock)" style="padding: 5px;">
+      <div class="row"><h2>Enter New Quantity:</h2></div>
+      <div class="row"><input type="number" name="newStock" required [(ngModel)]="restock"
+                              style="border: 2px solid black; height:100px; width: 100%;font-size: 60px"></div>
+    </form>
+  </div>
+  <div class="app-modal-footer" style="padding: 50px">
+    <div class="row">
+      <button class="btn btn-menu" style="height:40px;width:150px" (click)="updateStockConfirmation.show()">Confirm</button>
+    </div>
+    <div class="row">
+      <button class="btn btn-menu" style="height:40px;width:150px" (click)="updateStock.hide()">Cancel</button>
+    </div>
+  </div>
+</app-modal>
+
+<!--
+  Update Stock Confirmation Modal
+-->
+<app-modal id="updateStockConfirmation" #updateStockConfirmation style="margin-top: -10000px">
+  <div class="app-modal-header">
+    <div class="row">
+      <div class="row-md-2 offset-header">
+        <h2 style="text-align: center">{{selectedProduct.name}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="app-modal-body">
+    <div class="row" style="padding: 10px">
+      <p>Are you sure you want to change the quantity of {{selectedProduct.name}} from {{selectedProduct.count}} to {{restock}}?</p>
+    </div>
+  </div>
+  <div class="app-modal-footer">
+    <div class="row">
+      <button class="btn btn-menu" (click)="restockConfirm(updateStockConfirmation,updateStock,newCountModal)">Yes</button>
+    </div>
+    <div class="row">
+      <button class="btn btn-menu" (click)="updateStockConfirmation.hide()">No</button>
+    </div>
+    </div>
+</app-modal>
+
+<app-modal #newCountModal style="margin-top: -10000px">
+  <div class="app-modal-header">
+    <div class="row">
+      <div class="row-md-2 offset-header">
+        <h2 style="text-align: center">{{selectedProduct.name}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="app-modal-body">
+    <div class="row" style="padding: 10px">
+      <h2>New count is {{selectedProduct.count}}.</h2>
+    </div>
+  </div>
+  <div class="app-modal-footer">
+    <div class="row">
+      <button style="margin-right: 50px" class="btn btn-menu" style="height:40px;width:150px" (click)="newCountModal.hide()" >Close</button>
+    </div>
+  </div>
+</app-modal>
+
+<!--
+
+      --------------------------------- END OF RESTOCK SECTION ----------------------------------------------
+
+-->
+
+
+
+<!--
+      ------------------------------- THIS SECTION OF MODAL IS USED FOR THE CHANGE PRICE FEATURE--------------------------------------------
+
+-->
+
+
+<!--
+
+      ------------------------------------- CHANGE PRICE MODAL ----------------------------------------
+-->
+<app-modal #changePrice style="margin-top: 20px">
+  <div class="app-modal-header">
+    <div class="row">
+      <div class="row-md-2 offset-header">
+        <h2 style="text-align: center">{{selectedProduct.name}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="app-modal-body">
+    <div class="row">
+      <div class="row-md-2 offset-txt">
+        <h2 style="text-align: center">Current Price: ${{selectedProduct.price}}</h2>
+      </div>
+    </div>
+    <form #stock="ngForm" (ngSubmit)="setRestock(stock)" style="padding: 5px;">
+      <div class="row"><h2>Enter New Price:</h2></div>
+      <div class="row"><input type="number" name="newStock" required [(ngModel)]="newPrice"
+                              style="border: 2px solid black; height:100px; width: 100%;font-size: 60px"></div>
+    </form>
+  </div>
+  <div class="app-modal-footer" style="padding: 50px">
+    <div class="row">
+      <button class="btn btn-menu" style="height:40px;width:150px" (click)="changePriceConfirmation.show()">Confirm</button>
+    </div>
+    <div class="row">
+      <button class="btn btn-menu" style="height:40px;width:150px" (click)="changePrice.hide()">Cancel</button>
+    </div>
+  </div>
+</app-modal>
+
+<!--
+  -------------------------- CHANGE PRICE CONFIRMATION MODAL ------------------------------------
+-->
+<app-modal #changePriceConfirmation style="margin-top: -10000px">
+  <div class="app-modal-header">
+    <div class="row">
+      <div class="row-md-2 offset-header">
+        <h2 style="text-align: center">{{selectedProduct.name}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="app-modal-body">
+    <div class="row" style="padding: 10px">
+      <p>Are you sure you want to change the price of {{selectedProduct.name}} from {{selectedProduct.price | currency}} to {{newPrice | currency}}?</p>
+    </div>
+  </div>
+  <div class="app-modal-footer">
+    <div class="row" style="height:150px">
+      <button class="btn btn-menu" style="width:150px" (click)="updatePrice(changePriceConfirmation,changePrice,newPriceModal)">Yes</button>
+    </div>
+    <div class="row" style="height:150px">
+      <button class="btn btn-menu" style="height:150px;width:150px" (click)="updateStockConfirmation.hide()">No</button>
+    </div>
+  </div>
+</app-modal>
+
+<!--
+      ---------------------------- NEW PRICE MODAL -------------------------------------------
+-->
+
+<app-modal #newPriceModal style="margin-top: -10000px">
+  <div class="app-modal-header">
+    <div class="row">
+      <div class="row-md-2 offset-header">
+        <h2 style="text-align: center">{{selectedProduct.name}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="app-modal-body">
+    <div class="row" style="padding: 10px">
+      <h2>New price is {{selectedProduct.price| currency}}.</h2>
+    </div>
+  </div>
+  <div class="app-modal-footer">
+    <div class="row">
+      <button style="margin-right: 50px" class="btn btn-menu" style="height:40px;width:150px" (click)="newPriceModal.hide()" >Close</button>
+    </div>
+  </div>
+</app-modal>
+
+
+
+<!--
+
+    -------------------------------------- END OF CHANGE PRICE MODALS SECTION -------------------------------------------
+-->
+
+
+<!--**************************************************-->
+<!--Vend in progress message-->
+<!--**************************************************-->
+
+<app-modal #modal4 style="margin-top: 20px">
+  <div class="app-modal-header">
+    <div class="row">
+      <div class="row-md-2 offset-header">
+        <h2 style="text-align: center">Now vending:{{selectedProduct.name}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="app-modal-body">
+    <div class="row">
+      <div class="row-md-2 align-content-center"><img src={{selectedProduct.picture}}>
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-md-2 offset-txt">
+        <h2 style="text-align: center">Price: ${{selectedProduct.price}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="app-modal-footer">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 style="text-align: center">Now Vending</h2>
+      </div>
+    </div>
+  </div>
+</app-modal>
+
+<!--**************************************************-->
+<!--Out of Stock menu - appears when an item is selected and is out of stock-->
+<!--**************************************************-->
+
+<app-modal #modal5 style="margin-top: 20px">
+  <div class="app-modal-header">
+    <div class="row">
+      <div class="row-md-2 offset-header">
+        <h2 style="text-align: center">{{selectedProduct.name}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="app-modal-body">
+    <div class="row">
+      <div class="row-md-2 align-content-center">
+        <!--<img src={{selectedProduct.picture}}>-->
+      </div>
+    </div>
+    <div class="row">
+      <div class="row-md-2 offset-txt">
+        <h2 style="text-align: center">Price: ${{selectedProduct.price}}</h2>
+      </div>
+    </div>
+  </div>
+  <div class="app-modal-footer" *ngIf="!countFlag">
+    <div class="row">
+      <div class="col-md-12">
+        <!--<button type="button" class="btn btn-info btn-block"-->
+                <!--(click)="modal5.hide()" (click)="modal2.show()"-->
+                <!--(click)="modal2.longAutoHide()">Info-->
+        <!--</button>-->
+        <!--<button type="button" class="btn btn-danger btn-block"-->
+                <!--(click)="modal5.hide()">Cancel-->
+        <!--</button>-->
+      </div>
+    </div>
+  </div>
+  <!--<div class="app-modal-footer" *ngIf="countFlag">-->
+    <!--<div class="alert alert-danger">-->
+      <!--<strong>Out of Stock</strong>-->
+    <!--</div>-->
+  <!--</div>-->
+</app-modal>
